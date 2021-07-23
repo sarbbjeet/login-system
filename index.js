@@ -8,12 +8,11 @@ let host = '0.0.0.0'
 let port = 3000 // default port  
 
 
-
-
 route.get('/', async(req, res) => {
     res.send("hello world")
 })
 
+app.use('/', route)
 if (process.env.NODE_ENV == 'production')
     port = process.env.PORT
 else port = 3000 // local 3000 port 
