@@ -4,10 +4,10 @@ const config = require('config')
 let db_url = ""
 const db = () => {
 
-    if (process.env.NODE_ENV == 'produnction')
+    if (process.env.NODE_ENV == 'production')
         db_url = config.get('remote_db_url')
     else {
-        console.log("production mode and db_url", db_url);
+
         // console.log(process.env.NODE_ENV)
         db_url = config.get('local_db_url')
     }
