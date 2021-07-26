@@ -1,4 +1,4 @@
 {
-
+    "remote_db_url": "db",
     "jwtKey": "myToken"
 }

@@ -1,5 +1,5 @@
 {
-    "remote_db_url": "db",
+    "remote_db_url": "",
     "local_db_url": "mongodb://localhost/login_system",
     "jwtKey": ""
 

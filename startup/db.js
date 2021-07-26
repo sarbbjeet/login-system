@@ -7,6 +7,7 @@ const db = () => {
     if (process.env.NODE_ENV == 'produnction')
         db_url = config.get('remote_db_url')
     else {
+        console.log("production mode and db_url", db_url);
         // console.log(process.env.NODE_ENV)
         db_url = config.get('local_db_url')
     }
