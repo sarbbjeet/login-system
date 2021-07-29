@@ -14,7 +14,9 @@ let port = 3000 // default port
 
 route.get('/', async(req, res) => {
     //console.log(req.connection.remoteAddress)
-    res.json({ success: true, message: "Welcome to login system api server", ip: req.connection.remoteAddress })
+    let forwarded = req.headers['x-forwarded-for']
+    let ip = forwarded ? forwarded.split(/, /)[0] : req.connection.remoteAddress;
+    res.json({ success: true, message: "Welcome to login system api server", ip })
 })
 
 app.use('/', route)
