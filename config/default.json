@@ -3,6 +3,8 @@
     "pass": "",
     "dbName": "login_system",
     "local_db_url": "mongodb://localhost/",
-    "jwtKey": ""
+    "jwtKey": "",
+    "mailUsername": "",
+    "mailPassword": ""
 
 }

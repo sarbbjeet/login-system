@@ -15,10 +15,12 @@ const userSchema = new mongoose.Schema({
 })
 
 //created a method to generate jwt token
-userSchema.methods.generateJwtToken = async() => {
+userSchema.methods.generateJwtToken = async function() {
     let payload = { _id: this._id, role: this.role, status: this.status }
     let tokenKey = config.get('jwtKey')
-    let token = await jwt.sign(payload, tokenKey)
+    let token = await jwt.sign(payload, tokenKey, {
+        expiresIn: 60 * 60 * 24 * 14,
+    })
     return token
 }
 

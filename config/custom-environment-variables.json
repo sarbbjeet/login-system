@@ -1,5 +1,7 @@
 {
     "user": "remote_db_username",
     "pass": "remote_db_password",
-    "jwtKey": "myToken"
+    "jwtKey": "myToken",
+    "mailUsername": "mailId",
+    "mailPassword": "mailPass"
 }
