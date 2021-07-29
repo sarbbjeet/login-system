@@ -13,7 +13,8 @@ let host = '0.0.0.0'
 let port = 3000 // default port  
 
 route.get('/', async(req, res) => {
-    res.json({ success: true, message: "Welcome to login system api server" })
+    //console.log(req.connection.remoteAddress)
+    res.json({ success: true, message: "Welcome to login system api server", ip: req.connection.remoteAddress })
 })
 
 app.use('/', route)
