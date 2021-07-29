@@ -6,7 +6,7 @@ const authenticationPendingToken = (req, res, next) => {
     if (!token) return res.status(401).json({ success: false, message: "Access denied: token is required" })
     jwt.verify(token, config.get('jwtKey'), (err, user) => {
         if (err)
-            return res.status(401).send({ success: false, message: 'Access denied: verification error' })
+            return res.status(401).json({ success: false, message: 'Access denied: verification error (token is required)' })
         else
             req.user = user; //pass all user parameters to req.user object  
 
